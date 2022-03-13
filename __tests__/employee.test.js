@@ -1,5 +1,10 @@
+// import employee class
+const Employee = require('../lib/employee');
+
+// Test Employee class
 describe("TEST FOR EMPLOYEE CLASS", () => {
-    it("Should return true, this is a dummy test", () => {
-        expect(true).toBe(true)        
+    it("Should create an employee object", () => {
+        const emp = new Employee();
+        expect(typeof emp).toBe("object")       
     })
 })
