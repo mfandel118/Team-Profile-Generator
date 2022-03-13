@@ -4,6 +4,7 @@ const Employee = require('../lib/employee');
 // Test Employee class
 describe("TEST FOR EMPLOYEE CLASS", () => {
 
+    // Testing Properties of Employee class
     it("Should instantiate and create an employee object", () => {
         const emp = new Employee();
         expect(typeof emp).toBe("object")       
@@ -30,4 +31,12 @@ describe("TEST FOR EMPLOYEE CLASS", () => {
         expect(emp.email).toEqual(email);
     })
 
+    // testing methods of Employee class
+    it("Should return the name of the object when getName method is invoked", () => {
+        const name = "Missy";
+        const id = 24;
+        const email = "mfandel118@gmail.com";
+        const emp = new Employee(name, id, email);
+        expect(emp.getName()).toEqual(name);
+    })
 })
