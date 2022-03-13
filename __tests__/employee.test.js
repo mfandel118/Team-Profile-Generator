@@ -31,7 +31,7 @@ describe("TEST FOR EMPLOYEE CLASS", () => {
         expect(emp.email).toEqual(email);
     })
 
-    // testing methods of Employee class
+    // Testing methods of Employee class
     it("Should return the name of the object when getName method is invoked", () => {
         const name = "Missy";
         const id = 24;
@@ -39,4 +39,19 @@ describe("TEST FOR EMPLOYEE CLASS", () => {
         const emp = new Employee(name, id, email);
         expect(emp.getName()).toEqual(name);
     })
+    it("Should return the id of the object when getId method is invoked", () => {
+        const name = "Missy";
+        const id = 24;
+        const email = "mfandel118@gmail.com";
+        const emp = new Employee(name, id, email);
+        expect(emp.getId()).toEqual(id);
+    })
+    it("Should return the email of the object when getEmail method is invoked", () => {
+        const name = "Missy";
+        const id = 24;
+        const email = "mfandel118@gmail.com";
+        const emp = new Employee(name, id, email);
+        expect(emp.getEmail()).toEqual(email);
+    })
+
 })
