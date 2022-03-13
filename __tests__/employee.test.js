@@ -21,4 +21,13 @@ describe("TEST FOR EMPLOYEE CLASS", () => {
         const emp = new Employee(name, id);
         expect(emp.id).toEqual(id);
     })
+
+    it("Should have an email property when instantiated with an email parameter", () => {
+        const name = "Missy";
+        const id = 24;
+        const email = "mfandel118@gmail.com";
+        const emp = new Employee(name, id, email);
+        expect(emp.email).toEqual(email);
+    })
+
 })
