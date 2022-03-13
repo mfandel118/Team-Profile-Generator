@@ -54,4 +54,12 @@ describe("TEST FOR EMPLOYEE CLASS", () => {
         expect(emp.getEmail()).toEqual(email);
     })
 
+    it("Should return 'Employee' when the getRole method is called", () => {
+        const name = "Missy";
+        const id = 24;
+        const email = "mfandel118@gmail.com";
+        const emp = new Employee(name, id, email);
+        expect(emp.getRole()).toEqual("Employee");
+    })
+
 })
