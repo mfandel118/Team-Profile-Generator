@@ -4,7 +4,6 @@ const fs = require('fs');
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
-const Employee = require('./lib/employee')
 
 // Declare empty array for employees to be added to
 const employees = [];
@@ -82,9 +81,6 @@ function init() {
             // Push new mgr object to empty array
             employees.push(mgr);
             console.log(`${input.mgrName} added to contact page as the Manager!` )
-            
-            // Add new manager object to html
-
 
             // Call function to ask the user if they want to add another employee
             choiceToAdd();
@@ -103,8 +99,8 @@ function choiceToAdd() {
         ])
         .then(input => {
             // If yes, call function to ask user next set of prompts
-            // If no, tell user team contact page has been created
-            input.addNewEmp ? addEmployee() : console.log("Team contact page has been created!")
+            // If no, render html page with user input
+            input.addNewEmp ? addEmployee() : renderHTML();
         })
 }
 
@@ -125,12 +121,15 @@ function addEmployee() {
             }
             console.log(`${input.name} added to contact page as an ${input.role}!`)
 
-            // Add new employee obj to html
-
-
             // Call function to ask the user if they want to add another employee
             choiceToAdd();
         })
+}
+
+// Function to generate new HTML file with team's contact info
+function renderHTML() {
+
+    console.log("Team contact page has been created!")
 }
 
 // Call startup function to run app
