@@ -80,7 +80,8 @@ function init() {
 
             // Push new mgr object to empty array
             employees.push(mgr);
-
+            console.log(`${input.mgrName} added to contact page as the Manager!` )
+            
             // Add new manager object to html
 
 
@@ -89,6 +90,7 @@ function init() {
         })
 }
 
+// Function to determinje if additional employee or end of list
 function choiceToAdd() {
     inquirer
         .prompt([
@@ -105,12 +107,22 @@ function choiceToAdd() {
         })
 }
 
+// Function to add new employee's info
 function addEmployee() {
     inquirer
         // Ask for additional employee info
         .prompt(empPrompt)
         .then(input => {
             // console.log(input)
+
+            if (input.role === "Engineer") {
+                const emp = new Engineer(input.name, input.id, input.email, data.other);
+                employees.push(emp);
+            } else {
+                const emp = new Intern(input.name, input.id, input.email, data.other);
+                employees.push(emp);
+            }
+            console.log(`${input.name} added to contact page as an ${input.role}!`)
 
             // Add new employee obj to html
 
