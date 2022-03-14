@@ -13,7 +13,7 @@ describe("TEST FOR MANAGER CLASS", () => {
         const name = "Missy";
         const id = 24;
         const email = "mfandel118@gmail.com";
-        const officeNumber = "18";
+        const officeNumber = 118;
         const emp = new Manager(name, id, email, officeNumber);
         expect(emp.officeNumber).toEqual(officeNumber);
     })
@@ -23,7 +23,7 @@ describe("TEST FOR MANAGER CLASS", () => {
         const name = "Missy";
         const id = 24;
         const email = "mfandel118@gmail.com";
-        const officeNumber = "18";
+        const officeNumber = 118;
         const emp = new Manager(name, id, email, officeNumber);
         expect(emp.getOfficeNumber()).toEqual(officeNumber);
     })
@@ -32,8 +32,8 @@ describe("TEST FOR MANAGER CLASS", () => {
         const name = "Missy";
         const id = 24;
         const email = "mfandel118@gmail.com";
-        const github = "mfandel118";
-        const emp = new Manager(name, id, email, github);
+        const officeNumber = 118;
+        const emp = new Manager(name, id, email, officeNumber);
         expect(emp.getRole()).toEqual("Manager");
     })
 })
