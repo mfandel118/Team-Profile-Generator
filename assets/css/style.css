@@ -11,3 +11,7 @@ header {
   background-color: rgb(57, 3, 107);
   color: whitesmoke;
 }
+
+.card-header h2 {
+  font-weight: bold;
+}
