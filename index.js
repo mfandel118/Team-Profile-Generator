@@ -36,10 +36,14 @@ function init() {
         .prompt(mgrPrompt)
         .then(data => {
             // console.log(data);
-            
+
             // Create new manager object using user input
             const mgr = new Manager(data.mgrName, data.mgrId, data.mgrEmail, data. mgrOfficeNum)
-            console.log(mgr);
+            // console.log(mgr);
+
+            // Add new object to html
+
+            // Call function to ask user next set of prompts
         })
 }
 

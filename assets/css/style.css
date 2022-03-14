@@ -1,0 +1,13 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+  background-color: rgb(57, 3, 107);
+  color: whitesmoke;
+}
+
+.card-header {
+  background-color: rgb(57, 3, 107);
+  color: whitesmoke;
+}
