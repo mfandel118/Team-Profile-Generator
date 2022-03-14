@@ -6,37 +6,42 @@ const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 
 // Declare prompt variables
-const managerPrompt = [
+const mgrPrompt = [
     {
         type: "input",
         message: "What is the project Manager's name?",
-        name: "managerName"
+        name: "mgrName"
     },
     {
         type: "input",
         message: "What is the project Manager's id #?",
-        name: "managerId"
+        name: "mgrId"
     },
     {
         type: "input",
         message: "What is the project Manager's email?",
-        name: "managerEmail"
+        name: "mgrEmail"
     },
     {
         type: "input",
         message: "What is the project Manager's office #?",
-        name: "managerOfficeNum"
+        name: "mgrOfficeNum"
     },
 ]
 
 // Function to get info from user
-function createTeam() {
+function init() {
     inquirer
         // First ask about Manager info
-        .prompt(managerPrompt)
+        .prompt(mgrPrompt)
         .then(data => {
             // console.log(data);
+            
+            // Create new manager object using user input
+            const mgr = new Manager(data.mgrName, data.mgrId, data.mgrEmail, data. mgrOfficeNum)
+            console.log(mgr);
         })
 }
 
-createTeam();
+// Call startup function to run app
+init();
