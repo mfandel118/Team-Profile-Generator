@@ -8,7 +8,26 @@ describe("TEST FOR MANAGER CLASS", () => {
         expect(typeof emp).toBe("object")       
     });
 
-    // Test method to override role property for Manager class
+    // Test properties unique to Manager class
+    it("Should have a officeNumber property when instantiated with a officeNumber parameter", () => {
+        const name = "Missy";
+        const id = 24;
+        const email = "mfandel118@gmail.com";
+        const officeNumber = "18";
+        const emp = new Manager(name, id, email, officeNumber);
+        expect(emp.officeNumber).toEqual(officeNumber);
+    })
+
+    // Test methods unique to Manager class
+    it("Should return the officeNumber property when getOfficeNumber method is invoked", () => {
+        const name = "Missy";
+        const id = 24;
+        const email = "mfandel118@gmail.com";
+        const officeNumber = "18";
+        const emp = new Manager(name, id, email, officeNumber);
+        expect(emp.getOfficeNumber()).toEqual(officeNumber);
+    })
+
     it("Should override and return 'Manager' when the getRole method is called", () => {
         const name = "Missy";
         const id = 24;

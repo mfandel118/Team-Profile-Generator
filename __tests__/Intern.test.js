@@ -9,7 +9,7 @@ describe("TEST FOR INTERN CLASS", () => {
     });
 
     // Test properties unique to Intern class
-    it("Should have a github property when instantiated with a github parameter", () => {
+    it("Should have a school property when instantiated with a school parameter", () => {
         const name = "Missy";
         const id = 24;
         const email = "mfandel118@gmail.com";
@@ -19,7 +19,7 @@ describe("TEST FOR INTERN CLASS", () => {
     })
 
     // Test methods unique to Intern class
-    it("Should return the github property when getGithub method is invoked", () => {
+    it("Should return the school property when getSchool method is invoked", () => {
         const name = "Missy";
         const id = 24;
         const email = "mfandel118@gmail.com";
