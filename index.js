@@ -55,15 +55,14 @@ const empPrompt = [
     }, 
     {
         type: "input",
-        message: (input) => `What is ${input.name}'s GITHUB username?`,
-        name: "github",
-        when: (input) => input.role === "Engineer",
-    }, 
-    {
-        type: "input",
-        message: (input) => `What SCHOOL does ${input.name} attend?`,
-        name: "school",
-        when: (input) => input.role === "Intern",
+        message: (input) => {
+            if (input.role === "Engineer") {
+                return `What is ${input.name}'s GITHUB username?`
+            } else {
+                return `What SCHOOL does/did ${input.name} attend?`
+            }
+        },
+        name: "other",
     }, 
 ]
 
@@ -72,27 +71,53 @@ function init() {
     inquirer
         // First ask about Manager info
         .prompt(mgrPrompt)
-        .then(data => {
-            // console.log(data);
+        .then(input => {
+            // console.log(input);
 
             // Create new manager object using user input
-            const mgr = new Manager(data.mgrName, data.mgrId, data.mgrEmail, data. mgrOfficeNum)
+            const mgr = new Manager(input.mgrName, input.mgrId, input.mgrEmail, input. mgrOfficeNum)
             // console.log(mgr);
 
             // Push new mgr object to empty array
             employees.push(mgr);
 
-            // Add new object to html
+            // Add new manager object to html
 
-            // Ask the user if they want to add another employee
 
-            // Call function to ask user next set of prompts
-            addEmployee();
+            // Call function to ask the user if they want to add another employee
+            choiceToAdd();
+        })
+}
+
+function choiceToAdd() {
+    inquirer
+        .prompt([
+            {
+                type: "confirm",
+                message: "Do you have another employee you would like to add to this team?",
+                name: "addNewEmp"
+            }
+        ])
+        .then(input => {
+            // If yes, call function to ask user next set of prompts
+            // If no, tell user team contact page has been created
+            input.addNewEmp ? addEmployee() : console.log("Team contact page has been created!")
         })
 }
 
 function addEmployee() {
+    inquirer
+        // Ask for additional employee info
+        .prompt(empPrompt)
+        .then(input => {
+            // console.log(input)
 
+            // Add new employee obj to html
+
+
+            // Call function to ask the user if they want to add another employee
+            choiceToAdd();
+        })
 }
 
 // Call startup function to run app
