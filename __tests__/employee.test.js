@@ -1,15 +1,14 @@
-// Import employee class
+// Import Employee class
 const Employee = require('../lib/employee');
 
 // Test Employee class
 describe("TEST FOR EMPLOYEE CLASS", () => {
-
-    // Testing Properties of Employee class
-    it("Should instantiate and create an employee object", () => {
+    it("Should instantiate and create an Employee object", () => {
         const emp = new Employee();
         expect(typeof emp).toBe("object")       
     });
 
+    // Testing properties of Employee class
     it("Should have a name property when instantiated with a name parameter", () => {
         const name = "Missy";
         const emp = new Employee(name);
@@ -39,6 +38,7 @@ describe("TEST FOR EMPLOYEE CLASS", () => {
         const emp = new Employee(name, id, email);
         expect(emp.getName()).toEqual(name);
     })
+
     it("Should return the id of the object when getId method is invoked", () => {
         const name = "Missy";
         const id = 24;
@@ -46,6 +46,7 @@ describe("TEST FOR EMPLOYEE CLASS", () => {
         const emp = new Employee(name, id, email);
         expect(emp.getId()).toEqual(id);
     })
+
     it("Should return the email of the object when getEmail method is invoked", () => {
         const name = "Missy";
         const id = 24;
@@ -61,5 +62,4 @@ describe("TEST FOR EMPLOYEE CLASS", () => {
         const emp = new Employee(name, id, email);
         expect(emp.getRole()).toEqual("Employee");
     })
-
 })
