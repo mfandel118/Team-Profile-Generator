@@ -4,6 +4,7 @@ const fs = require('fs');
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
+const Employee = require('./lib/employee')
 
 // Declare empty array for employees to be added to
 const employees = [];
