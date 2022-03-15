@@ -34,6 +34,10 @@ in the terminal. Make sure you are in the correct directory, "Team-Profile-Gener
 
 https://github.com/mfandel118/Team-Profile-Generator
 
+## Link to Video Walkthrough
+
+https://drive.google.com/file/d/1P_F5sAHO4aLEpKjITeU_Crx5Bcsn-pfk/view
+
 ## Screenshot(s)
 
 ![Command Line Prompts](./dist/assets/images/prompts.png)
